@@ -1,6 +1,6 @@
 const http = require('http');
 
-// Simple logic to "sample" or filter data
+// Simple logic to filter data
 function processData(data) {
     if (data.voltage < 0 || data.voltage > 5) return null; // Logic check
     return {
@@ -31,4 +31,4 @@ if (require.main === module) {
     server.listen(3000, () => console.log('Sampler running on port 3000'));
 }
 
-module.exports = { processData }; // Export for unit tests
+module.exports = { processData }; // Export for unit test
