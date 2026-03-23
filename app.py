@@ -2,9 +2,6 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# --- CONFIGURATION (Modifiability Tactic) ---
-# We keep these as variables so they are easy to change later 
-# without rewriting the core logic.
 VOLTAGE_TO_TEMP_FACTOR = 20  # Example: 1.25V * 20 = 25.0C
 MIN_SAFE_VOLTAGE = 0.0
 MAX_SAFE_VOLTAGE = 5.0
