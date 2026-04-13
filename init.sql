@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS weather_logs (
+    id SERIAL PRIMARY KEY,
+    temperature FLOAT NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
