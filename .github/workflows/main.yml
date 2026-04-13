@@ -50,5 +50,5 @@ jobs:
         DB_USER: postgres
         DB_PASS: password
       run: |
-        pytest tests/test_transformer.py 
-        
+   
+        python -m pytest
