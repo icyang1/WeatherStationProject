@@ -17,3 +17,4 @@ Output JSON Example (confirmation):
 }
 
 Design Explanation: REST API serves as the "gatekeeper" for the database. Ensures the Transformer gets confirmation that the data is safe with POST pattern.
+I chose a RESTful POST pattern for the Transformer and Database layer to synchronize better.
