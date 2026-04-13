@@ -1,17 +1,19 @@
-Endpoint: POST /transform
+Endpoint: POST /temperature
 Communication Format: JSON
-Protocol: HTTP/REST
+Protocol: HTTP
 
-Input JSON Example (From Sampler): {
-  "sensorId": "WS-001",
-  "voltage": 1.25,
-  "timestamp": "2026-03-22T22:42:00Z"
-}
-
-Output JSON Example (To Pipeline): {
-  "status": "processed",
+Input JSON Example (From Transformer): 
+{
   "temperature": 25.0,
   "unit": "Celsius",
-  "originalVoltage": 1.25
+  "timestamp": "2026-04-12T18:30:00Z"
 }
-Design Explanation: Transformer API manages the data processing layer. Uses JSON to validate the incoming sensor data and converts electric signals to values.
+
+Output JSON Example (confirmation): 
+{
+  "status": "stored",
+  "db_id": 1,
+  "message": "Data persisted successfully"
+}
+
+Design Explanation: REST API serves as the "gatekeeper" for the database. Ensures the Transformer gets confirmation that the data is safe with POST pattern.
